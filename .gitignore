@@ -1,0 +1,8 @@
+node_modules/
+build/
+.env
+.idea/
+.vscode/
+/src/data/db.json
+xcom-login-info.txt
+xcom-storage-state.json
