@@ -117,8 +117,12 @@ export class TwitterService {
       }
       await collectData()
       let currentLoaded = 0
+      let tryAgain = 3
       // // Scroll and collect follower info, handling lazy-loading
-      while (currentLoaded < uniqueFollowers.length) {
+      while (currentLoaded < uniqueFollowers.length || tryAgain > 0) {
+        if (currentLoaded === uniqueFollowers.length) {
+          tryAgain--
+        }
         currentLoaded = uniqueFollowers.length
         // Get the current scroll height
 
